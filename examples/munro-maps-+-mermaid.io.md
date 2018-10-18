@@ -6,6 +6,53 @@ description: >-
 
 # Munro Maps + Mermaid.IO
 
-test
+{% embed url="https://mermaidjs.github.io/mermaid-live-editor/" caption="https://mermaidjs.github.io/mermaid-live-editor/" %}
 
-<iframe src="https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkdvYWwoKEdvYWwpKS0tPlNob3BwaW5nKChcIkdvIHNob3BwaW5nXCIpKVxuU2hvcHBpbmcoKFwiR28gc2hvcHBpbmdcIikpIC0tPiBDe0xldCBtZSB0aGlua31cbkMgLS0-fE9uZXwgRFtMYXB0b3BdXG5DIC0tPnxUd298IEVbaVBob25lXVxuQyAtLT58VGhyZWV8IEZbZmE6ZmEtY2FyIENhcl1cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></iframe>
+![Example Munro Map created with Mermaid.IO](../.gitbook/assets/mermaid-diagram.svg)
+
+{% code-tabs %}
+{% code-tabs-item title="Example 1" %}
+```typescript
+graph BT
+
+subgraph horizon 1
+  Now[The Now House]
+  Initative1((Initative 1))
+  InitativeA((Initative A))
+end
+subgraph horizon 1
+Initative2((Initative 2))
+Initative3((Initative 3))
+Initative4((Initative 4))
+Milestone1>Milestone 1]
+end 
+subgraph horizon 3
+Initative5((Initative 5));
+Milestone2>Milestone 2]
+Goal((fa:fa-flag))
+end 
+
+Now -->Initative1
+Now --> InitativeA
+InitativeA --> Initative4
+InitativeA -. Before .- Initative2
+Initative1 --> Initative2
+Initative2 -.-> Milestone1
+Initative2 --> Initative3
+Initative2 --> Initative4
+Initative4 --> Initative5
+Initative3 --> Goal
+Initative3 -. Before.- Initative5
+Initative3 -.-> Milestone2
+Initative4 -.-> Milestone2
+Initative5 --> Goal
+
+classDef goalStyle fill:#f9f, stroke:#333, stroke-width:2px;
+class Goal goalStyle
+
+classDef nowStyle fill:lightgreen, stroke:#333, stroke-width:2px;
+class Now nowStyle
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+

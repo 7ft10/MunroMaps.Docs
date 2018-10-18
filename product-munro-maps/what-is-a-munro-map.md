@@ -1,7 +1,3 @@
----
-description: Overview of a Munro Map.
----
-
 # What is a Munro Map?
 
 The book ["Product Leadership: How Top Product Managers Launch Awesome Products and Build Successful Teams" by Banfield, Eriksson, and Walkingshaw](https://books.google.com.au/books?id=UrbZDgAAQBAJ&vq=gantt&source=gbs_navlinks_s), has a section within it that reads: 
