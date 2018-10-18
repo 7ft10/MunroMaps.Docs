@@ -10,7 +10,7 @@ description: >-
 
 {% tabs %}
 {% tab title="Munro Map created with Mermaid.IO" %}
-![Example Munro Map created with Mermaid.IO](../.gitbook/assets/mermaid-diagram.svg)
+![Example Munro Map created with Mermaid.IO](../.gitbook/assets/mermaid-diagram.svg=1920x1020)
 {% endtab %}
 
 {% tab title="Mermaid Script" %}
