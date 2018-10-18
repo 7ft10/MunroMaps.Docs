@@ -8,11 +8,13 @@ description: >-
 
 {% embed url="https://mermaidjs.github.io/mermaid-live-editor/" caption="https://mermaidjs.github.io/mermaid-live-editor/" %}
 
+{% tabs %}
+{% tab title="Munro Map created with Mermaid.IO" %}
 ![Example Munro Map created with Mermaid.IO](../.gitbook/assets/mermaid-diagram.svg)
+{% endtab %}
 
-{% code-tabs %}
-{% code-tabs-item title="Example 1" %}
-```typescript
+{% tab title="Mermaid Script" %}
+```text
 graph BT
 
 subgraph horizon 1
@@ -53,6 +55,8 @@ class Goal goalStyle
 classDef nowStyle fill:lightgreen, stroke:#333, stroke-width:2px;
 class Now nowStyle
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
+
+
 
