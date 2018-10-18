@@ -23,3 +23,7 @@
 
 * [SMART Goal](the-process/smart-goal.md)
 
+## Examples
+
+* [Munro Maps + Mermaid.IO](examples/munro-maps-+-mermaid.io.md)
+
