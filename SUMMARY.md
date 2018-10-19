@@ -26,5 +26,5 @@
 
 ## Examples
 
-* [Munro Maps + Mermaid.IO](examples/munro-maps-+-mermaid.io.md)
+* [Munro Maps + mermaidjs](examples/munro-maps-+-mermaid.io.md)
 
