@@ -15,11 +15,11 @@ Munro Maps looks at the road map more like, well, a road map. If you are travell
 
 ![Munro Map - from The Now House to the Summit Goal](../.gitbook/assets/map1.png)
 
-Munro Maps use the concept of mountains \(see [What is a Munro?](../scottish-munros/what-is-a-munro.md)\) to create a sense of urgency and direction. We start at the bottom of the mountain at the base camp \(or [The "Now House"](the-now-house.md)\) and we want to get to the top - our goal. 
+Munro Maps use the concept of mountains \(see [What is a Munro?](../scottish-munros/what-is-a-munro.md)\) to create a sense of urgency and direction. We start at the bottom of the mountain at the base camp \(or [The "Now House"](../the-mechanics/the-now-house.md)\) and we want to get to the top - our goal. 
 
 As a team working on a product \(or project or within a company\) we want to succeed. We want to reach the goal \(see [What is Munro Bagging?](../scottish-munros/what-is-munro-bagging.md)\). By creating a directed graph to represent the mountain we can create nodes - representing initiatives - and vertices - representing dependency, relative-time and estimated-length of imitative.
 
-By using familiar agile techniques of cards \(see [What is a Munro Card?](what-is-a-munro-card.md)\) and walls - yes physical things - we can create a Munro Map within a few hours. 
+By using familiar agile techniques of cards \(see [What is a Munro Card?](../the-mechanics/what-is-a-munro-card.md)\) and walls - yes physical things - we can create a Munro Map within a few hours. 
 
 From the research I have conducted and presenting this at a number of conferences and workshops the outcomes are far beyond those of "traditional road mapping techniques". Participants are able to create a road map quickly and with great detail through collaboration and communication \(Individuals and Interactions Over Processes and Tools\). 
 
