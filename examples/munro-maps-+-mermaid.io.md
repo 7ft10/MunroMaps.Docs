@@ -1,8 +1,7 @@
 ---
 description: >-
-  Munro maps can be created with Mermaid (mermaidjs). Mermaid is a web-based
-  graphical layout and drawing library that uses d3 and dagre-d3 libraries to
-  create simple structured diagrams.
+  Mermaid is a simple markdown-like script language for generating charts from
+  text via javascript. Perfect for creating web-based Munro Maps.
 ---
 
 # Munro Maps + mermaidjs

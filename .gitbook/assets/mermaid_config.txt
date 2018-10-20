@@ -1,0 +1,8 @@
+{
+  "theme": "neutral",
+  "themeCSS": ".cluster text {  visibility: hidden; } .cluster rect { width: 100000px; height: 100000px; x: -5000px; stroke: none !important; } .cluster:nth-child(3) > * { fill: #fcfcea !important; }  .cluster:nth-child(2) > * { fill: #fbfbde !important; } .cluster:nth-child(1) > * { fill: #fafad2 !important; } div { text-align: center } .goalStyle > * { fill:#f9f !important; stroke:#333 !important; stroke-width:2px !important;} .nowStyle > * { fill:lightgreen !important; stroke:#333 !important; stroke-width:2px !important;} .node { text-align: center;} .logoStyle ellipse { visibility: hidden; } .logoStyle foreignObject { background-image: url(https://munromaps.files.wordpress.com/2018/10/logo.png); background-repeat: no-repeat; background-size: 50px; height: 50px !important; width: 50px !important; x:10px; y:30px; }",
+  "flowchart": {
+    "curve": "basis",
+    "htmlLabels": true
+  }
+}
