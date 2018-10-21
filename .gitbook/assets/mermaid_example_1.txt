@@ -1,10 +1,9 @@
 graph BT
 
-
 %% Create Initiatives within Horizons 
-Logo(- -)
+Logo(-Created using<br/>Munro Maps<br/>technique-)
 subgraph horizon 1  
-	Now[The Now House]  
+	Now(-The Now House-)
 	Initative1((Initative 1))  
 	Initative2((Initative 2))
 end
@@ -18,9 +17,8 @@ end
 subgraph horizon 3  
 	Initative6((Initative 6)) 
 	Milestone2>Milestone 2]  
-	Goal((fa:fa-flag))
+	Goal(-fa:fa-flag-)
 end
-
 
 %% Link Initiatives 
 Now --> Initative1
@@ -39,15 +37,14 @@ Initative4 -.-> Milestone2
 Initative5 -.-> Milestone2
 Initative6 --> Goal
 
-
 %% Hyperlinks to your Goal and Initiative definitions
 click Goal "https://docs.munromaps.com.au/strategy/the-process/smart-goal"
 click Now "https://docs.munromaps.com.au/strategy/product-munro-maps/the-now-house"
 click Initative1 "https://docs.munromaps.com.au/strategy/product-munro-maps/what-is-a-munro-card"
 click Milestone1 "https://docs.munromaps.com.au/strategy/product-munro-maps/what-is-a-munro-milestone"
-click Waypoint1 "javascript:alert('Make a decision here based on data from Milestone1');"
+click Waypoint1 "javascript:window.close();alert('Make a decision here based on data from Milestone1');"
 
-
-%% Style (Also include Mermain Configuration)
+%% Style (Included Mermaid Configuration)
+class Logo logoStyle
 class Goal goalStyle
 class Now nowStyle
