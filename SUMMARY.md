@@ -17,8 +17,7 @@
 * [What is a Munro Milestone?](the-mechanics/what-is-a-munro-milestone.md)
 * [Map Horizons](the-mechanics/map-horizons.md)
 * [The "Now House"](the-mechanics/the-now-house.md)
-* [Milestones \(Decision Points\)](the-mechanics/milestones-decision-points.md)
-* [Lines](the-mechanics/lines.md)
+* [Roads, Lines & Vertices](the-mechanics/lines.md)
 * [SMART Goal](the-mechanics/smart-goal.md)
 
 ## The Process

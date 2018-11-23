@@ -1,4 +1,0 @@
-# Milestones \(Decision Points\)
-
-
-
