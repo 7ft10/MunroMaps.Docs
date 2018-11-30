@@ -34,5 +34,5 @@
 ## Examples
 
 * [Munro Maps + mermaidjs](examples/munro-maps-+-mermaid.io.md)
-* [d3js Examples](examples/d3js-examples.md)
+* [d3js Examples](https://examples.munromaps.com.au/)
 
