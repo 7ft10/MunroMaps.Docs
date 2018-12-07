@@ -18,7 +18,7 @@
 * [Map Horizons](the-mechanics/map-horizons.md)
 * [The "Now House"](the-mechanics/the-now-house.md)
 * [Roads, Lines & Vertices](the-mechanics/lines.md)
-* [SMART Goal](the-mechanics/smart-goal.md)
+* [Goal](the-mechanics/smart-goal.md)
 
 ## The Process
 
@@ -33,6 +33,5 @@
 
 ## Examples
 
-* [Munro Maps + mermaidjs](examples/munro-maps-+-mermaid.io.md)
-* [d3js Examples](https://examples.munromaps.com.au/)
+* [Web examples](http://examples.munromaps.com.au/)
 
