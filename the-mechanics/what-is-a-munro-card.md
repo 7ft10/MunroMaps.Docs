@@ -32,3 +32,5 @@ The back of the Munro Card can incorporate other notes that you may identify dur
 
 ![](../.gitbook/assets/card2.png)
 
+You could also use a the Goal Oriented Product Roadmap \(GO Product Roadmap\) template from Roman Pichler. [https://www.romanpichler.com/blog/goal-oriented-agile-product-roadmap/](https://www.romanpichler.com/blog/goal-oriented-agile-product-roadmap/)
+
