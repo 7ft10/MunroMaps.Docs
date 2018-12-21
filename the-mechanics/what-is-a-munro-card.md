@@ -34,3 +34,15 @@ The back of the Munro Card can incorporate other notes that you may identify dur
 
 You could also use a the Goal Oriented Product Roadmap \(GO Product Roadmap\) template from Roman Pichler. [https://www.romanpichler.com/blog/goal-oriented-agile-product-roadmap/](https://www.romanpichler.com/blog/goal-oriented-agile-product-roadmap/)
 
+Or as a hypothesis using a template like...
+
+```text
+We believe that if we <deliver/implement/provide> <this change from the current state to the future state, X changes/provides/gives/updates Y>
+(Then) we will be able to <discover/test/demonstrate> <this outcome> 
+We will know we have succeeded when <we see/do/earn/produce etc. (metrics). – could be a set of bullet points> 
+
+* Must incorporate who is it solving a problem for/who benefits from it – could be in the outcome or the metrics. 
+```
+
+
+
