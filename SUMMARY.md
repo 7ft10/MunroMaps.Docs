@@ -33,5 +33,6 @@
 
 ## Examples
 
+* [Example](examples/example.md)
 * [Web examples](http://examples.munromaps.com.au/)
 

@@ -1,0 +1,686 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script src="https://unpkg.com/d3-template-plugin/build/d3-template.min.js"></script>
+
+    <style>
+        main {
+            width: 100%;
+            height: 90%;
+        }
+        
+        .modal {
+            opacity: 0;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            top: -15px;
+            position: relative;
+            right: -5px;
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .svg-container {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            vertical-align: top;
+        }
+        
+        .svg-content-responsive {
+            display: inline-block;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+        
+        .road {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 5px;
+        }
+        
+        .horizon>.horizonRect {
+            opacity: 0.1;
+            fill: blue;
+        }
+        
+        .horizon>.horizonText {
+            fill: black;
+        }
+        
+        .node>.nodeText {
+            fill: black;
+        }
+        
+        .node>.symbol.initiative {
+            stroke: none;
+            fill: red;
+        }
+        
+        .node>.symbol.now {
+            stroke: none;
+            fill: orchid;
+        }
+        
+        .node>.symbol.goal {
+            stroke: none;
+            fill: gold;
+        }
+        
+        .node>.symbol.milestone {
+            stroke: none;
+            fill: lime;
+        }
+        
+        .node>.symbol.decisionpoint {
+            stroke: none;
+            fill: chocolate;
+        }
+        
+        .road.milestone {
+            stroke-dasharray: 3, 3;
+        }
+        
+        .road.hover {
+            stroke: lightgreen;
+        }
+        
+        .road.arrow {
+            stroke-width: 5;
+            stroke: #000;
+            stroke-dasharray: 5, 5;
+        }
+    </style>
+    <script>
+        var munroMap = {
+            horizons: [{
+                id: 1,
+                name: "Horizon 1",
+                type: "horizon"
+            }, {
+                id: 2,
+                name: "Horizon 2",
+                type: "horizon"
+            }, {
+                id: 3,
+                name: "Horizon 3",
+                type: "horizon"
+            }, {
+                id: 4,
+                name: "Horizon 4",
+                type: "horizon"
+            }, {
+                id: 5,
+                name: "Horizon 5",
+                type: "horizon"
+            }],
+            nodes: [{
+                id: 1,
+                name: "GOAL",
+                horizon: 1,
+                type: "goal",
+                links: [
+                    2, 3
+                ]
+            }, {
+                id: 2,
+                name: "B1",
+                horizon: 2,
+                type: "initiative",
+                links: [
+                    7
+                ]
+            }, {
+                id: 3,
+                name: "B2",
+                horizon: 2,
+                type: "initiative",
+                links: [
+                    4, 5, 6
+                ]
+            }, {
+                id: 4,
+                name: "C1",
+                horizon: 3,
+                type: "initiative",
+                links: [
+                    7, 9
+                ]
+            }, {
+                id: 5,
+                name: "C2",
+                horizon: 3,
+                type: "initiative",
+                links: [
+                    7
+                ]
+            }, {
+                id: 6,
+                name: "C3",
+                horizon: 4,
+                type: "initiative",
+                links: [
+                    7
+                ]
+            }, {
+                id: 7,
+                name: "The Now House",
+                horizon: 5,
+                type: "now",
+                links: [
+
+                ]
+            }, {
+                id: 9,
+                name: "Milestone 1",
+                horizon: 3,
+                type: "milestone",
+                links: [
+                    6
+                ]
+            }, {
+                id: 10,
+                name: "Decisions Point 1",
+                horizon: 3,
+                type: "decisionpoint",
+                links: [
+                    6
+                ]
+            }]
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        Header.
+    </header>
+    <main>
+        Loading...
+    </main>
+    <footer>
+        Footer.
+    </footer>
+
+    <script type="text/html" name="template" id="modal-template">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div><span>Id:</span> <span>{{d.id}}</span></div>
+                <div><span>Name:</span> <span>{{d.name}}</span></div>
+                <div><span>Type:</span> <span>{{d.type}}</span></div>
+                <div><span>Horizon:</span> <span>{{d.horizonDetails.name}}</span></div>
+                <div>
+                    <span>Predecessors:</span>
+                    <ul data-repeat="{{d.predecessors}}">
+                        <li>{{d.name}}</li>
+                    </ul>
+                </div>
+                <div>
+                    <span>Successors:</span>
+                    <ul data-repeat="{{d.successors}}">
+                        <li>{{d.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script>
+        var self = {
+
+            Id: function(d) {
+                return d.id;
+            },
+
+            Name: function(d) {
+                return d.name;
+            },
+
+            X: function(d) {
+                return d.x;
+            },
+
+            Y: function(d) {
+                return d.y;
+            },
+
+            Height: function(d) {
+                return d.height;
+            },
+
+            Radius: function(d) {
+                return d.r;
+            },
+
+            Class: function(d) {
+                var prefix = d3.select(this).attr("class");
+                if (!prefix || prefix.length == 0) prefix = "";
+                else prefix += " ";
+                return prefix + d.type;
+            },
+
+            Colour: function(d) {
+                return d.data && d.data.colour || "blue";
+            },
+
+            CurvedPath: function(d) {
+                return d3.linkVertical().x(self.X).y(self.Y)({
+                    source: {
+                        x: d.source.x,
+                        y: d.source.y
+                    },
+                    target: {
+                        x: d.target.x,
+                        y: d.target.y
+                    }
+                });
+            },
+
+            TranslateToXY: function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            },
+
+            CenteredText: function(d) {
+                return 0 - (this.getComputedTextLength() / 2);
+            },
+
+            MiddledText: function(d) {
+                var bb = this.getBBox();
+                return bb.height - (bb.height / 3 * 2);
+            },
+
+            SourceName: function(d) {
+                return "node_" + d.source.id;
+            },
+
+            SourceX: function(d) {
+                return d.source.x;
+            },
+
+            SourceY: function(d) {
+                return d.source.y;
+            },
+
+            TargetName: function(d) {
+                return "node_" + d.target.id;
+            },
+
+            TargetX: function(d) {
+                return d.target.x;
+            },
+
+            TargetY: function(d) {
+                return d.target.y;
+            },
+        }
+
+        var initiativeSelf = {
+
+            Symbol: function(d) {
+                switch (d.type) {
+                    case "goal":
+                        return d3.symbol()
+                            .type(d3.symbolStar)
+                            .size(1500)();
+                    case "now":
+                        return d3.symbol()
+                            .type(d3.symbolTriangle)
+                            .size(1500)();
+                    case "milestone":
+                        return d3.symbol()
+                            .type(d3.symbolCross)
+                            .size(1500)();
+                    case "decisionpoint":
+                        return d3.symbol()
+                            .type(d3.symbolDiamond)
+                            .size(1500)();
+                    default:
+                        return d3.symbol()
+                            .type(d3.symbolCircle)
+                            .size(1500)();
+                }
+            },
+
+            SymbolClass: function(d) {
+                var prefix = d3.select(this).attr("class");
+                if (!prefix || prefix.length == 0) prefix = "";
+                else prefix += " ";
+                return prefix + d.type + " symbol";
+            },
+
+            OnMouseOver: function(d) {
+                d.links.forEach(function(link) {
+                    d3.selectAll(".road[source='node_" + d.id + "'][target='node_" + link + "']").classed("hover", true);
+                });
+                d3.selectAll(".road[target='node_" + d.id + "']").classed("hover", true);
+            },
+
+            OnMouseOut: function(d) {
+                d.links.forEach(function(link) {
+                    d3.selectAll(".road[source='node_" + d.id + "'][target='node_" + link + "']").classed("hover", false);
+                });
+                d3.selectAll(".road[target='node_" + d.id + "']").classed("hover", false);
+            },
+
+            getPredecessors: function(initiative) {
+                var predecessors = [];
+                initiative.links.forEach(function(link) {
+                    predecessors = predecessors.concat(munroMap.nodes.filter(function(i) {
+                        return i.id === link;
+                    }))
+                })
+                return predecessors;
+            },
+
+            getSuccessors: function(initiative) {
+                var successors = munroMap.nodes.filter(function(i) {
+                    return i.links.indexOf(initiative.id) > -1;
+                })
+                return successors;
+            },
+
+            getHorizonDetails: function(initiative) {
+                var horizon = munroMap.horizons.filter(function(h) {
+                    return h.id === initiative.horizon;
+                }).pop();
+                if (!horizon) throw "No horizon set";
+                return horizon;
+            },
+        }
+
+        var roadSelf = {
+            OnMouseOver: function(d) {
+                d3.select(this).classed("hover", true);
+            },
+
+            OnMouseOut: function(d) {
+                d3.select(this).classed("hover", false);
+            }
+        }
+
+        var linkSelf = {
+            FindTarget: function(nodes, link) {
+                var target = nodes.filter(function(d) {
+                    return d.id === link;
+                }).pop();
+                if (!target) throw "Invalid link";
+                return target;
+            }
+        }
+
+        var modalSelf = {
+
+            _template: null,
+
+            Show: function(d) {
+                if (!modalSelf._template) {
+                    var skeleton = d3.select("#modal-template").node().firstChild.data;
+                    modalSelf._template = d3.select('#modal-dialog')
+                        .html(skeleton)
+                        .template()
+                }
+                modalSelf._template.render(Object.assign(d, {
+                    predecessors: initiativeSelf.getPredecessors(d),
+                    successors: initiativeSelf.getSuccessors(d),
+                    horizonDetails: initiativeSelf.getHorizonDetails(d),
+                }));
+
+                d3.select('#modal-dialog')
+                    .style('display', 'block')
+                    .transition()
+                    .duration(300)
+                    .style('opacity', 1)
+
+                d3.select('#modal-dialog')
+                    .select('.modal-close')
+                    .on("click", modalSelf.Hide)
+            },
+
+            Hide: function(d) {
+                d3.select('#modal-dialog')
+                    .transition()
+                    .duration(300)
+                    .style('opacity', 0)
+                    .transition()
+                    .duration(1)
+                    .style('display', 'none')
+            }
+        }
+
+        function createCanvas(main) {
+            var rect = main.node().getBoundingClientRect();
+            var canvas = {
+                outerwidth: rect.width - rect.left - (rect.right - rect.width),
+                outerheight: rect.height,
+                margin: {
+                    top: 10,
+                    right: 10,
+                    bottom: 10,
+                    left: 10
+                }
+            };
+            return Object.assign(canvas, {
+                width: canvas.outerwidth - canvas.margin.left - canvas.margin.right,
+                height: canvas.outerheight - canvas.margin.top - canvas.margin.bottom,
+            });
+        }
+
+        function createMap(munroMap, main, canvas) {
+            var horizons = munroMap.horizons;
+            var nodes = munroMap.nodes;
+            var roads = [];
+
+            // build horizons
+            horizons.forEach(function(horizon, i) {
+                var h = (canvas.height - (horizons.length * canvas.margin.top)) / horizons.length;
+                horizon = Object.assign(horizon, {
+                    initiativeCount: nodes.filter(function(v) {
+                        return v.horizon === horizon.id;
+                    }).length,
+                    counter: 0,
+                    margin: canvas.margin.top,
+                    height: h,
+                    x: 0,
+                    y: (i * (h + canvas.margin.top))
+                });
+            });
+
+            // build nodes
+            nodes.forEach(function(node) {
+                var horizon = initiativeSelf.getHorizonDetails(node);
+                node = Object.assign(node, {
+                    x: (canvas.width / (horizon.initiativeCount + 1)) * ++horizon.counter,
+                    y: ((node.horizon - 1) * (horizon.height + canvas.margin.top)) + (horizon.height / 2)
+                });
+            });
+
+            // build roads
+            nodes.forEach(function(node) {
+                node.links.forEach(function(link) {
+                    var target = linkSelf.FindTarget(nodes, link);
+                    var type = (target.type == "milestone" || node.type == "milestone") ? "milestone" : "path";
+                    roads.push({
+                        id: roads.length + 1,
+                        type: type,
+                        source: {
+                            id: node.id,
+                            name: node.name,
+                            x: node.x,
+                            y: node.y + 25,
+                        },
+                        target: {
+                            id: target.id,
+                            name: target.name,
+                            x: target.x,
+                            y: target.y - 25
+                        }
+                    });
+                });
+            });
+
+            return {
+                horizons: horizons,
+                nodes: nodes,
+                roads: roads,
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var main = d3.select("main").html("");
+            var canvas = createCanvas(main);
+            var map = createMap(munroMap, main, canvas);
+
+            var svgW = main
+                .append("div")
+                .classed("svg-container", true)
+                .append("svg")
+                .classed("svg-content-responsive", true)
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 " + canvas.outerwidth + " " + canvas.outerheight)
+                .attr("width", canvas.outerwidth)
+                .attr("height", canvas.outerheight)
+
+            var modal = main
+                .append('div')
+                .attr('id', 'modal-dialog')
+                .attr('class', 'modal')
+                .style('opacity', 0)
+
+            var svg = svgW
+                .append("g")
+                .attr("transform", "translate(" + canvas.margin.left + "," + canvas.margin.top + ")");
+
+            var defs = svgW
+                .append("defs")
+                .append("marker")
+                .attr("id", "arrow")
+                .attr("class", "arrowHead")
+                .attr("viewBox", "0 -5 10 10")
+                .attr("refX", 5)
+                .attr("refY", 0)
+                .attr("markerWidth", 4)
+                .attr("markerHeight", 4)
+                .attr("orient", "auto")
+                .append("path")
+                .attr("d", "M0,-5L10,0L0,5")
+
+            var horizonsSVG = svg
+                .append("g")
+                .attr("class", "horizons")
+                .selectAll('rect.horizon')
+                .data(map.horizons)
+                .enter()
+                .append('g')
+                .attr('id', function(d) {
+                    return "horizon_" + d.id;
+                })
+                .classed('horizon', true)
+                .attr("transform", self.TranslateToXY)
+                .attr('name', self.Name)
+
+            var horizonRectSVG = horizonsSVG
+                .append("rect")
+                .classed("horizonRect", true)
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr("width", canvas.width + canvas.margin.right)
+                .attr("height", self.Height)
+
+            var horizonTextSVG = horizonsSVG
+                .append("text")
+                .text(self.Name)
+                .classed("horizonText", true)
+                .attr("dx", 5)
+                .attr("dy", 20)
+
+            var roadsSVG = svg
+                .append("g")
+                .attr("class", "roads")
+                .selectAll('path.road')
+                .data(map.roads)
+                .enter()
+                .append('path')
+                .attr('id', function(d) {
+                    return "road_" + d.id;
+                })
+                .classed('road', true)
+                .attr('class', self.Class)
+                .attr('source', self.SourceName)
+                .attr('target', self.TargetName)
+                .attr("marker-end", "url(#arrow)")
+                .attr('d', self.CurvedPath)
+                .on("mouseover", roadSelf.OnMouseOver)
+                .on("mouseout", roadSelf.OnMouseOut)
+
+            var nodesSVG = svg
+                .append("g")
+                .attr("class", "nodes")
+                .selectAll('node')
+                .data(map.nodes)
+                .enter()
+                .append('g')
+                .attr('id', function(d) {
+                    return "node_" + d.id;
+                })
+                .classed('node', true)
+                .attr("class", self.Class)
+                .attr("transform", self.TranslateToXY)
+                .attr('name', self.Name)
+                .on("mouseover", initiativeSelf.OnMouseOver)
+                .on("mouseout", initiativeSelf.OnMouseOut)
+                .on("click", modalSelf.Show)
+
+            var symbolsSVG = nodesSVG
+                .append('path')
+                .attr("class", initiativeSelf.SymbolClass)
+                .attr('d', initiativeSelf.Symbol)
+
+            var nodeTextSVG = nodesSVG
+                .append("text")
+                .text(self.Name)
+                .classed("nodeText", true)
+                .attr("dx", self.CenteredText)
+                .attr("dy", self.MiddledText)
+
+        });
+    </script>
+
+</body>
+
+</html>
