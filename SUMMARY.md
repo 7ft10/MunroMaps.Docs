@@ -3,14 +3,14 @@
 * [Welcome](README.md)
 * [Main Site](https://munromaps.com.au)
 
-## Scottish Munros
-
-* [What is a Munro?](scottish-munros/what-is-a-munro.md)
-* [What is Munro Bagging?](scottish-munros/what-is-munro-bagging.md)
-
 ## Product Munro Maps
 
 * [What is a Munro Map?](product-munro-maps/what-is-a-munro-map.md)
+
+## Scottish Munros
+
+* [What is a Munro?](scottish-munros2/what-is-a-munro.md)
+* [What is Munro Bagging?](scottish-munros2/what-is-munro-bagging.md)
 
 ## The Mechanics
 

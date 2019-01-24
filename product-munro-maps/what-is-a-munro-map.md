@@ -19,9 +19,9 @@ Munro Maps looks at the road map more like, well, a road map. If you are travell
 
 ![Munro Map - from The Now House to the Summit Goal](../.gitbook/assets/map1.png)
 
-Munro Maps use the concept of mountains \(see [What is a Munro?](../scottish-munros/what-is-a-munro.md)\) to create a sense of urgency and direction. We start at the bottom of the mountain at the base camp \(or [The "Now House"](../the-mechanics/the-now-house.md)\) and we want to get to [our destination](../the-process/1.-identify-the-destination.md) at the top - [our goal](../the-mechanics/smart-goal.md). 
+Munro Maps use the concept of mountains \(see [What is a Munro?](../scottish-munros2/what-is-a-munro.md)\) to create a sense of urgency and direction. We start at the bottom of the mountain at the base camp \(or [The "Now House"](../the-mechanics/the-now-house.md)\) and we want to get to [our destination](../the-process/1.-identify-the-destination.md) at the top - [our goal](../the-mechanics/smart-goal.md). 
 
-As a team working on a product \(or project or within a company\) we want to succeed. We want to reach the goal \(see [What is Munro Bagging?](../scottish-munros/what-is-munro-bagging.md)\). By creating a directed graph to represent the mountain we can create nodes - representing initiatives - and vertices - representing dependency, relative-time and estimated-length of the initiative or whatever suits your business or road map's purpose.
+As a team working on a product \(or project or within a company\) we want to succeed. We want to reach the goal \(see [What is Munro Bagging?](../scottish-munros2/what-is-munro-bagging.md)\). By creating a directed graph to represent the mountain we can create nodes - representing initiatives - and vertices - representing dependency, relative-time and estimated-length of the initiative or whatever suits your business or road map's purpose.
 
 By using familiar agile techniques of cards \(see [What is a Munro Card?](../the-mechanics/what-is-a-munro-card.md)\) and walls - yes physical things - we can create a Munro Map within a few hours. 
 
