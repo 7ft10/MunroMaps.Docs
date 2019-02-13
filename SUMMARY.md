@@ -20,6 +20,7 @@
 * [The "Now House"](the-mechanics/the-now-house.md)
 * [Roads, Lines & Vertices](the-mechanics/lines.md)
 * [Goal](the-mechanics/smart-goal.md)
+* [Strategy vs Tactics](the-mechanics/strategy-vs-tactics.md)
 
 ## The Process
 
