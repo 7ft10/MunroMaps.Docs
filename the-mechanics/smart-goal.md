@@ -22,3 +22,5 @@ Goals are typically set for an horizon of one or more years — this is where we
 
 * Goals rather than solutions and vague strategy statements.
 
+In the book [The Art of Action](http://www.stephenbungay.com/Books.ink) by Stephen Bungay, he says, “Keep it simple. Don’t tell people what to do and how to do it. Instead, be as clear as you can about your intentions. Say what you want people to achieve and, above all, tell them why. Then ask them to tell you what they are going to do as a result.”
+
