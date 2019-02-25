@@ -21,6 +21,10 @@
 * [Roads, Lines & Vertices](the-mechanics/lines.md)
 * [Goal](the-mechanics/smart-goal.md)
 * [Strategy vs Tactics](the-mechanics/strategy-vs-tactics.md)
+* [Action Words](the-mechanics/action-words.md)
+* [Road Map Attributes](the-mechanics/road-map-attributes.md)
+* [Approach & Strategy](the-mechanics/approach-and-strategy.md)
+* [Initiatives](the-mechanics/initiatives.md)
 
 ## The Process
 
