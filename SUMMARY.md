@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Main Site](https://munromaps.com.au)
 
 ## Product Munro Maps
 
@@ -39,5 +38,5 @@
 
 ## Examples
 
-* [Examples](https://examples.munromaps.com.au/)
+* [Examples](https://example.munromaps.com.au/)
 
