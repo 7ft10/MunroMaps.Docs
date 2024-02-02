@@ -35,8 +35,3 @@
 * [6. Devise a route](the-process/6.-devise-a-route.md)
 * [7. Brainstorm alternative options](the-process/7.-brainstorm-alternative-options.md)
 * [8. Way-points](the-process/8.-waypoint.md)
-
-## Examples
-
-* [Examples](http://example.munromaps.com.au/)
-
