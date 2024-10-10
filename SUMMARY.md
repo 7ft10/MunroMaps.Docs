@@ -11,19 +11,24 @@
 * [What is a Munro?](scottish-munros2/what-is-a-munro.md)
 * [What is Munro Bagging?](scottish-munros2/what-is-munro-bagging.md)
 
+## The Cards
+
+* [Munro Action Card](the-cards/what-is-a-munro-card.md)
+* [Munro Outcome Card](the-cards/munro-outcome-card.md)
+* [Munro Milestone Card](the-cards/what-is-a-munro-milestone.md)
+* [Munro RAID Card](the-cards/munro-raid-card.md)
+
 ## The Mechanics
 
-* [What is a Munro Card?](the-mechanics/what-is-a-munro-card.md)
-* [What is a Munro Milestone?](the-mechanics/what-is-a-munro-milestone.md)
-* [Map Horizons](the-mechanics/map-horizons.md)
-* [The "Now House"](the-mechanics/the-now-house.md)
-* [Roads, Lines & Vertices](the-mechanics/lines.md)
-* [Goal](the-mechanics/smart-goal.md)
-* [Strategy vs Tactics](the-mechanics/strategy-vs-tactics.md)
-* [Action Words](the-mechanics/action-words.md)
-* [Road Map Attributes](the-mechanics/road-map-attributes.md)
-* [Approach & Strategy](the-mechanics/approach-and-strategy.md)
-* [Initiatives](the-mechanics/initiatives.md)
+* [Goal](the-mechanics/smart-goal/README.md)
+  * [Action Words](the-mechanics/smart-goal/action-words.md)
+* [Road Map Attributes](the-mechanics/road-map-attributes/README.md)
+  * [Map Horizons](the-mechanics/road-map-attributes/map-horizons.md)
+  * [Roads, Lines & Vertices](the-mechanics/road-map-attributes/lines.md)
+  * [The "Now House"](the-mechanics/road-map-attributes/the-now-house.md)
+  * [Initiatives](the-mechanics/road-map-attributes/initiatives.md)
+* [Approach & Strategy](the-mechanics/approach-and-strategy/README.md)
+  * [Strategy vs Tactics](the-mechanics/approach-and-strategy/strategy-vs-tactics.md)
 
 ## The Process
 
